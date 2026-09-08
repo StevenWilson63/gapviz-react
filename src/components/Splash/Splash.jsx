@@ -5,30 +5,42 @@ import gapvizLogo from "../../assets/logos/gapviz-logo.svg";
 export default function Splash() {
   const [showLogo, setShowLogo] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
+  const [showSecondTagline, setShowSecondTagline] = useState(false);
 
   useEffect(() => {
-    // Fade in logo
-    setTimeout(() => {
-      setShowLogo(true);
-    }, 300);
+  // Fade in logo
+  setTimeout(() => {
+    setShowLogo(true);
+  }, 300);
 
-    // Fade in tagline
-    setTimeout(() => {
-      setShowTagline(true);
-    }, 1200);
-  }, []);
+  // Fade in "Your music."
+  setTimeout(() => {
+    setShowTagline(true);
+  }, 1200);
 
-  return (
-    <div className="splash-container">
-      <img
-        src={gapvizLogo}
-        alt="Gapviz Logo"
-        className={`splash-logo ${showLogo ? "visible" : ""}`}
-      />
+  // Fade in "Their story."
+  setTimeout(() => {
+    setShowSecondTagline(true);
+  }, 2200);
+}, []);
 
-      <p className={`splash-tagline ${showTagline ? "visible" : ""}`}>
-        Your music. Their story.
-      </p>
-    </div>
-  );
+
+ return (
+  <div className="splash-container">
+    <img
+      src={gapvizLogo}
+      alt="Gapviz Logo"
+      className={`splash-logo ${showLogo ? "visible" : ""}`}
+    />
+
+    <p className={`splash-tagline ${showTagline ? "visible" : ""}`}>
+      Your music.
+    </p>
+
+    <p className={`splash-tagline ${showSecondTagline ? "visible" : ""}`}>
+      Their story.
+    </p>
+  </div>
+);
+
 }

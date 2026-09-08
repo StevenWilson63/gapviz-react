@@ -27,7 +27,7 @@
 /* Tagline fade-in */
 .splash-tagline {
   font-size: 18px;
-  margin-top: 20px;
+  margin-top: 12px;
   color: #888;
   opacity: 0;
   transition: opacity 1.2s ease;
