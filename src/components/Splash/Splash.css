@@ -1,5 +1,6 @@
 /* Full replacement Splash.css */
 
+/* Container */
 .splash-container {
   background: black;
   height: 100vh;
@@ -11,7 +12,7 @@
   text-align: center;
 }
 
-/* Logo fade-in */
+/* Logo fade-in (kept as fade) */
 .splash-logo {
   width: 180px;
   opacity: 0;
@@ -24,15 +25,28 @@
   transform: scale(1);
 }
 
-/* Tagline fade-in */
+/* Tagline container (one line) */
 .splash-tagline {
   font-size: 18px;
-  margin-top: 12px;
-  color: #888;
-  opacity: 0;
-  transition: opacity 1.2s ease;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  color: white;
 }
 
-.splash-tagline.visible {
-  opacity: 1;
+/* Each part pops in instantly */
+.tagline-part {
+  opacity: 0;
+  transition: opacity 0s; /* no fade */
+  color: white;
+}
+
+.tagline-part.visible {
+  opacity: 1; /* instant pop */
+}
+
+/* Gap stays white */
+.tagline-gap {
+  color: white;
 }

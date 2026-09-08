@@ -13,15 +13,11 @@ export default function Splash() {
     setShowLogo(true);
   }, 300);
 
-  // Fade in "Your music."
-  setTimeout(() => {
-    setShowTagline(true);
-  }, 1200);
+   // "Your music." pops in
+  setTimeout(() => setShowTagline(true), 1200);
 
-  // Fade in "Their story."
-  setTimeout(() => {
-    setShowSecondTagline(true);
-  }, 2200);
+  // "Their story." pops in 0.5s later
+  setTimeout(() => setShowSecondTagline(true), 1700);
 }, []);
 
 
@@ -33,13 +29,18 @@ export default function Splash() {
       className={`splash-logo ${showLogo ? "visible" : ""}`}
     />
 
-    <p className={`splash-tagline ${showTagline ? "visible" : ""}`}>
-      Your music.
-    </p>
+    <p className="splash-tagline">
+  <span className={`tagline-part ${showTagline ? "visible" : ""}`}>
+    Your music.
+  </span>
+  <span className="tagline-gap"> </span>
+  <span className={`tagline-part ${showSecondTagline ? "visible" : ""}`}>
+    Their story.
+  </span>
+</p>
 
-    <p className={`splash-tagline ${showSecondTagline ? "visible" : ""}`}>
-      Their story.
-    </p>
+
+
   </div>
 );
 
