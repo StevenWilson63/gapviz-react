@@ -1,6 +1,4 @@
-/* Full replacement Splash.css */
-
-/* Container */
+/* GLOBAL CONTAINER */
 .splash-container {
   background: black;
   height: 100vh;
@@ -10,14 +8,16 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  overflow: hidden;
 }
 
-/* Logo fade-in (kept as fade) */
+/* LOGO — 4s fade-in */
 .splash-logo {
-  width: 180px;
+  width: 75vw;
+  max-width: 900px;
   opacity: 0;
   transform: scale(0.92);
-  transition: opacity 1.2s ease, transform 1.2s ease;
+  transition: opacity 4s ease, transform 4s ease;
 }
 
 .splash-logo.visible {
@@ -25,28 +25,146 @@
   transform: scale(1);
 }
 
-/* Tagline container (one line) */
+/* TAGLINE — one line, natural spacing */
 .splash-tagline {
-  font-size: 18px;
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 6px;
+  margin-top: 16px;
+  font-size: 26px;
   color: white;
+  white-space: nowrap;
+  display: inline-block;
 }
 
-/* Each part pops in instantly */
 .tagline-part {
   opacity: 0;
-  transition: opacity 0s; /* no fade */
+  transition: opacity 0s;
   color: white;
 }
 
 .tagline-part.visible {
-  opacity: 1; /* instant pop */
+  opacity: 1;
 }
 
-/* Gap stays white */
 .tagline-gap {
-  color: white;
+  display: inline;
+}
+
+/* ON AIR */
+.onair-box {
+  margin-top: 34px;
+  padding: 8px 24px;
+  border: 2px solid #ff2a2a;
+  color: #ff2a2a;
+  font-size: 28px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.onair-box.visible {
+  opacity: 1;
+}
+
+.onair-box {
+  animation: fadeIn 1s forwards;
+  animation-delay: 4s;
+}
+
+.onair-box span {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* TAP INSTRUCTION */
+
+/* SUBSCRIBER BLOCK */
+.subscriber-block {
+  margin-top: 30px;
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-align: center;
+}
+
+.subscriber-block.visible {
+  opacity: 1;
+}
+
+
+.subscriber-block.visible {
+  opacity: 1;
+}
+
+/* Discover Gapviz — join now */
+.discover-line {
+  font-size: 20px;
+  margin-bottom: 18px;
+  color: #ffffff;
+}
+
+/* Join now capsule */
+.join-capsule {
+  display: inline-block;
+  background: #ff2a2a;
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 999px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: opacity 0.2s ease;
+}
+
+.join-capsule:hover {
+  opacity: 0.85;
+}
+
+.join-capsule:active {
+  opacity: 0.75;
+}
+
+/* Free trial lines */
+.trial-line {
+  font-size: 18px;
+  margin-bottom: 4px;
+  color: #ffffff;
+}
+
+.nocard-line {
+  font-size: 18px;
+  margin-top: 2px;
+  color: #ffffff;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .splash-logo {
+    width: 75vw !important;
+    max-width: 75vw !important;
+    margin-top: 60px !important;
+  }
+
+  .splash-tagline {
+    max-width: 70vw !important;
+    font-size: 26px !important;
+    margin-top: 20px !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  .onair-box {
+    font-size: 32px !important;
+    padding: 10px 30px !important;
+    margin-top: 36px !important;
+  }
+}
+
+/* FADE-IN KEYFRAME */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

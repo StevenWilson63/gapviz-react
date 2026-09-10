@@ -1,47 +1,82 @@
 import React, { useEffect, useState } from "react";
 import "./Splash.css";
 import gapvizLogo from "../../assets/logos/gapviz-logo.svg";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Splash() {
   const [showLogo, setShowLogo] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
   const [showSecondTagline, setShowSecondTagline] = useState(false);
-
+  const [showOnAir, setShowOnAir] = useState(false);
+  const [showTap, setShowTap] = useState(false);
+  const [showSubscriber, setShowSubscriber] = useState(false);
+  const navigate = useNavigate();
   useEffect(() => {
-  // Fade in logo
-  setTimeout(() => {
-    setShowLogo(true);
-  }, 300);
+    // Logo fade-in
+    setTimeout(() => {
+      setShowLogo(true);
+    }, 300);
 
-   // "Your music." pops in
-  setTimeout(() => setShowTagline(true), 1200);
+    // "Your music." pops in
+    setTimeout(() => setShowTagline(true), 1200);
 
-  // "Their story." pops in 0.5s later
-  setTimeout(() => setShowSecondTagline(true), 1700);
-}, []);
+    // "Their story." pops in 0.5s later
+    setTimeout(() => setShowSecondTagline(true), 1700);
+
+    // ON AIR appears
+    setTimeout(() => setShowOnAir(true), 4000);
+
+    // Tap instruction appears
+    setTimeout(() => setShowTap(true), 5000);
+
+    // Subscriber block appears
+    setTimeout(() => setShowSubscriber(true), 6000);
+  }, []);
+
+  return (
+    <div className="splash-container">
+
+      {/* Logo */}
+      <img
+        src={gapvizLogo}
+        alt="Gapviz Logo"
+        className={`splash-logo ${showLogo ? "visible" : ""}`}
+      />
+
+      {/* Tagline */}
+      <p className="splash-tagline">
+        <span className={`tagline-part ${showTagline ? "visible" : ""}`}>
+          Your music.
+        </span>
+        <span className="tagline-gap"> </span>
+        <span className={`tagline-part ${showSecondTagline ? "visible" : ""}`}>
+          Their story.
+        </span>
+      </p>
+
+      {/* ON AIR */}
+      <div className={`onair-box ${showOnAir ? "visible" : ""}`}>
+  <span>ON AIR</span>
+</div>
 
 
- return (
-  <div className="splash-container">
-    <img
-      src={gapvizLogo}
-      alt="Gapviz Logo"
-      className={`splash-logo ${showLogo ? "visible" : ""}`}
-    />
+      {/* Tap instruction */}
+      
 
-    <p className="splash-tagline">
-  <span className={`tagline-part ${showTagline ? "visible" : ""}`}>
-    Your music.
-  </span>
-  <span className="tagline-gap"> </span>
-  <span className={`tagline-part ${showSecondTagline ? "visible" : ""}`}>
-    Their story.
-  </span>
-</p>
+      {/* Subscriber block */}
+      <div className={`subscriber-block ${showSubscriber ? "visible" : ""}`}>
+        <p className="discover-line">Discover Gapviz — join now</p>
+
+        <div className="join-capsule" onClick={() => navigate("/join")}>
+  Join now
+</div>
 
 
+        <p className="trial-line">Enjoy Gapviz Premium free for 7 days</p>
+        <p className="nocard-line">No card required</p>
+      </div>
 
-  </div>
-);
-
+    </div>
+  );
 }
