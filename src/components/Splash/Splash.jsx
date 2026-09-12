@@ -16,10 +16,10 @@ export default function Splash() {
     // Logo fade-in
     setTimeout(() => {
       setShowLogo(true);
-    }, 300);
+    }, 200);
 
     // "Your music." pops in
-    setTimeout(() => setShowTagline(true), 1200);
+    setTimeout(() => setShowTagline(true), 1400);
 
     // "Their story." pops in 0.5s later
     setTimeout(() => setShowSecondTagline(true), 1600);
@@ -28,10 +28,10 @@ export default function Splash() {
     setTimeout(() => setShowOnAir(true), 1700);
 
     // Tap instruction appears
-    setTimeout(() => setShowTap(true), 5000);
+    setTimeout(() => setShowTap(true), 2000);
 
     // Subscriber block appears
-    setTimeout(() => setShowSubscriber(true), 6000);
+    setTimeout(() => setShowSubscriber(true), 3000);
   }, []);
 
   return (
