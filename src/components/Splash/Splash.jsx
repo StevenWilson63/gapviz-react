@@ -25,7 +25,7 @@ export default function Splash() {
     setTimeout(() => setShowSecondTagline(true), 2000);
 
     // ON AIR appears
-    setTimeout(() => setShowOnAir(true), 2300);
+    setTimeout(() => setShowOnAir(true), 2600);
 
     // Tap instruction appears
     setTimeout(() => setShowTap(true), 2500);
