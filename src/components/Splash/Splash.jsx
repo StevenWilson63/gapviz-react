@@ -28,10 +28,10 @@ export default function Splash() {
     setTimeout(() => setShowOnAir(true), 2400);
 
     // Tap instruction appears
-    setTimeout(() => setShowTap(true), 3300);
+    setTimeout(() => setShowTap(true), 3000);
 
     // Subscriber block appears
-    setTimeout(() => setShowSubscriber(true), 4000);
+    setTimeout(() => setShowSubscriber(true), 3500);
   }, []);
 
   return (
