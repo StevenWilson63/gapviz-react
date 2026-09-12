@@ -186,3 +186,28 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
+/* RETURNING USER MESSAGE — FINAL WORKING VERSION */
+.returning-message {
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-align: center;
+  margin-top: 30px;
+  color: #ffffff; /* bright white */
+  font-size: 20px; /* match Discover Gapviz */
+  font-weight: 500;
+}
+
+/* Fade-in when visible */
+.returning-message.visible {
+  opacity: 1;
+}
+
+/* Lines inside the message */
+.returning-message .welcome-line,
+.returning-message .dj-line {
+  margin-bottom: 10px;
+  color: #ffffff; /* ensure bright white */
+  font-size: 20px; /* match Discover Gapviz */
+  font-weight: 500;
+}
