@@ -31,7 +31,7 @@ export default function Splash() {
     setTimeout(() => setShowTap(true), 3300);
 
     // Subscriber block appears
-    setTimeout(() => setShowSubscriber(true), 5000);
+    setTimeout(() => setShowSubscriber(true), 4500);
   }, []);
 
   return (
