@@ -3,7 +3,6 @@ import "./Splash.css";
 import gapvizLogo from "../../assets/logos/gapviz-logo.svg";
 import { useNavigate } from "react-router-dom";
 
-
 export default function Splash() {
   const [showLogo, setShowLogo] = useState(false);
   const [showTagline, setShowTagline] = useState(false);
@@ -11,7 +10,16 @@ export default function Splash() {
   const [showOnAir, setShowOnAir] = useState(false);
   const [showTap, setShowTap] = useState(false);
   const [showSubscriber, setShowSubscriber] = useState(false);
+
+  // ⭐ Returning-user state
+  const isReturning = localStorage.getItem("returningUser") === "true";
+  const displayName = localStorage.getItem("displayName");
+  const lastDJName = localStorage.getItem("lastDJName");
+
+  const [showReturningMessage, setShowReturningMessage] = useState(false);
+
   const navigate = useNavigate();
+
   useEffect(() => {
     // Logo fade-in
     setTimeout(() => {
@@ -21,16 +29,25 @@ export default function Splash() {
     // "Your music." pops in
     setTimeout(() => setShowTagline(true), 1400);
 
-    // "Their story." pops in 1.0s later
+    // "Their story." pops in
     setTimeout(() => setShowSecondTagline(true), 2000);
 
     // ON AIR appears
     setTimeout(() => setShowOnAir(true), 2400);
 
-    // Tap instruction appears
-    setTimeout(() => setShowTap(true), 2800);
+    // ⭐ RETURNING USER SEQUENCE
+    if (isReturning) {
+      // Returning message appears at SAME timing as subscriber block
+      setTimeout(() => setShowReturningMessage(true), 3000);
 
-    // Subscriber block appears
+      // Auto-navigate to home after 2 seconds
+      setTimeout(() => navigate("/home"), 5000);
+
+      return; // Stop new-user sequence
+    }
+
+    // ⭐ NEW USER SEQUENCE
+    setTimeout(() => setShowTap(true), 2800);
     setTimeout(() => setShowSubscriber(true), 3000);
   }, []);
 
@@ -57,25 +74,38 @@ export default function Splash() {
 
       {/* ON AIR */}
       <div className={`onair-box ${showOnAir ? "visible" : ""}`}>
-  <span>ON AIR</span>
-</div>
-
-
-      {/* Tap instruction */}
-      
-
-      {/* Subscriber block */}
-      <div className={`subscriber-block ${showSubscriber ? "visible" : ""}`}>
-        <p className="discover-line">Discover Gapviz — join now</p>
-
-        <div className="join-capsule" onClick={() => navigate("/join")}>
-  Join now
-</div>
-
-
-        <p className="trial-line">Enjoy Gapviz Premium free for 7 days</p>
-        <p className="nocard-line">No card required</p>
+        <span>ON AIR</span>
       </div>
+
+      {/* ⭐ Returning-user message */}
+      {isReturning && (
+        <div
+          className={`returning-message ${
+            showReturningMessage ? "visible" : ""
+          }`}
+        >
+          <p className="welcome-line">
+            Welcome back {displayName}.
+          </p>
+          <p className="dj-line">
+            DJ {lastDJName} is live in the studio.
+          </p>
+        </div>
+      )}
+
+      {/* ⭐ Subscriber block (new users only) */}
+      {!isReturning && (
+        <div className={`subscriber-block ${showSubscriber ? "visible" : ""}`}>
+          <p className="discover-line">Discover Gapviz — join now</p>
+
+          <div className="join-capsule" onClick={() => navigate("/join")}>
+            Join now
+          </div>
+
+          <p className="trial-line">Enjoy Gapviz Premium free for 7 days</p>
+          <p className="nocard-line">No card required</p>
+        </div>
+      )}
 
     </div>
   );
