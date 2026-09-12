@@ -21,8 +21,8 @@ export default function Splash() {
     // "Your music." pops in
     setTimeout(() => setShowTagline(true), 1400);
 
-    // "Their story." pops in 0.5s later
-    setTimeout(() => setShowSecondTagline(true), 2000);
+    // "Their story." pops in 1.0s later
+    setTimeout(() => setShowSecondTagline(true), 2400);
 
     // ON AIR appears
     setTimeout(() => setShowOnAir(true), 1900);
