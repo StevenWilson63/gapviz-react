@@ -22,10 +22,10 @@ export default function Splash() {
     setTimeout(() => setShowTagline(true), 1200);
 
     // "Their story." pops in 0.5s later
-    setTimeout(() => setShowSecondTagline(true), 1700);
+    setTimeout(() => setShowSecondTagline(true), 1600);
 
     // ON AIR appears
-    setTimeout(() => setShowOnAir(true), 4000);
+    setTimeout(() => setShowOnAir(true), 2000);
 
     // Tap instruction appears
     setTimeout(() => setShowTap(true), 5000);
