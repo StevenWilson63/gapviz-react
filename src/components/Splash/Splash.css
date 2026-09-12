@@ -79,7 +79,25 @@
   100% { opacity: 1; }
 }
 
-/* TAP INSTRUCTION */
+/* RETURNING USER MESSAGE */
+.returning-message {
+  opacity: 0;
+  transition: opacity 1s ease;
+  text-align: center;
+  margin-top: 30px;
+  color: #ffffff; /* bright white */
+}
+
+.returning-message.visible {
+  opacity: 1;
+}
+
+.returning-message .welcome-line,
+.returning-message .dj-line {
+  font-size: 20px; /* matches Discover Gapviz */
+  font-weight: 500;
+  margin-bottom: 10px;
+}
 
 /* SUBSCRIBER BLOCK */
 .subscriber-block {
@@ -88,11 +106,6 @@
   transition: opacity 1s ease;
   text-align: center;
 }
-
-.subscriber-block.visible {
-  opacity: 1;
-}
-
 
 .subscriber-block.visible {
   opacity: 1;
@@ -160,6 +173,11 @@
     font-size: 32px !important;
     padding: 10px 30px !important;
     margin-top: 36px !important;
+  }
+
+  .returning-message .welcome-line,
+  .returning-message .dj-line {
+    font-size: 20px !important;
   }
 }
 
