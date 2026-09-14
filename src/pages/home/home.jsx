@@ -14,16 +14,11 @@ export default function Home() {
   const navigate = useNavigate();
   const { getGreetingName, getInitials, theme } = useUser();
 
-  // Bottom nav active state
   const [activeNav, setActiveNav] = useState("home");
 
-  // Greeting name (nickname → displayName → fallback)
   const greetingName = getGreetingName();
-
-  // Initials for avatar (from fullName)
   const initials = getInitials() || "";
 
-  // Time‑based greeting prefix
   const hours = new Date().getHours();
   let greetingPrefix = "";
   if (hours < 12) greetingPrefix = "Good morning";
@@ -34,7 +29,7 @@ export default function Home() {
 
   return (
     <>
-      {/* TOP‑LEFT AVATAR */}
+      {/* FIXED TOP AVATAR */}
       <div
         id="top-avatar"
         className={`home-avatar home-theme-${theme}`}
@@ -43,16 +38,14 @@ export default function Home() {
         {initials}
       </div>
 
-      {/* MAIN HOME SCREEN */}
+      {/* SCROLLABLE MIDDLE SECTION */}
       <div id="home-screen" className={`home-theme-${theme}`}>
         <img id="home-logo" src={gapvizLogo} alt="Gapviz Logo" />
 
         <h1 id="welcome-text">{greetingText}</h1>
         <p className="sub-welcome">Ready to jump back in?</p>
 
-        {/* STACKED BOXES */}
         <div className="home-boxes">
-
           <div className="home-box" onClick={() => navigate("/dj")}>
             <h2>Last DJ</h2>
             <p>Not set yet</p>
@@ -67,14 +60,11 @@ export default function Home() {
             <h2>Last Track Played</h2>
             <p>No track played yet</p>
           </div>
-
         </div>
       </div>
 
-      {/* BOTTOM NAV */}
+      {/* FIXED BOTTOM NAV */}
       <div id="bottom-nav" className={`home-theme-${theme}`}>
-
-        {/* HOME */}
         <div
           className={`nav-item ${activeNav === "home" ? "active" : ""}`}
           onClick={() => {
@@ -87,7 +77,6 @@ export default function Home() {
           <div className="nav-underline"></div>
         </div>
 
-        {/* DJ */}
         <div
           className={`nav-item ${activeNav === "dj" ? "active" : ""}`}
           onClick={() => {
@@ -100,7 +89,6 @@ export default function Home() {
           <div className="nav-underline"></div>
         </div>
 
-        {/* LIBRARY */}
         <div
           className={`nav-item ${activeNav === "library" ? "active" : ""}`}
           onClick={() => {
@@ -113,7 +101,6 @@ export default function Home() {
           <div className="nav-underline"></div>
         </div>
 
-        {/* IDENTIFY */}
         <div
           className={`nav-item ${activeNav === "identify" ? "active" : ""}`}
           onClick={() => {
@@ -125,7 +112,6 @@ export default function Home() {
           <span>Identify</span>
           <div className="nav-underline"></div>
         </div>
-
       </div>
     </>
   );

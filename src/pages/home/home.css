@@ -29,23 +29,25 @@ body {
 
 /* SCROLLABLE MAIN HOME SCREEN */
 #home-screen {
-  position: absolute;
-  top: 100px;        /* space below fixed avatar */
-  bottom: 90px;      /* space above fixed footer */
+  position: fixed;
+  top: 100px;        /* BELOW avatar */
+  bottom: 90px;      /* ABOVE bottom nav */
   left: 0;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0 40px 0; /* extra bottom padding for scroll comfort */
+  padding: 20px 0 40px 0;
 }
 
 /* GAPVIZ LOGO */
 #home-logo {
   width: 160px;
   height: auto;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -98,18 +100,18 @@ body {
   color: #ccc;
 }
 
-/* FIXED BOTTOM NAV (FOOTER) */
+/* FIXED BOTTOM NAV (FOOTER) — NOW PURE BLACK */
 #bottom-nav {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 90px;
-  background-color: #111;
+  background-color: #000;   /* MATCHES HEADER + MIDDLE */
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-top: 1px solid #333;
+  border-top: none;          /* REMOVES THE LINE */
   z-index: 1000;
 }
 
