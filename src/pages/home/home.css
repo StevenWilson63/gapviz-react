@@ -76,13 +76,24 @@ body {
 }
 
 .home-box {
-  background-color: #111;
+  width: 100%;
   padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #333;
+  background: transparent;
+  border: 2px solid rgba(255, 26, 26, 0.35); /* soft red outline */
+  border-radius: 10px;
+  color: #FF1A1A;
+  font-size: 18px;
+  text-transform: lowercase;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: border 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
+
+.home-box:active {
+  border-color: #FF1A1A; /* bright red */
+  color: #FF1A1A;
+  box-shadow: 0px 0px 12px rgba(255, 26, 26, 0.6); /* red glow */
+}
+
 
 .home-box:hover {
   background-color: #181818;
