@@ -5,9 +5,10 @@ body {
   background-color: #000;
   font-family: Arial, sans-serif;
   color: #fff;
+  overflow-x: hidden;
 }
 
-/* TOP-LEFT AVATAR (LOCKED HEADER) */
+/* FIXED TOP-LEFT AVATAR (HEADER) */
 #top-avatar {
   position: fixed;
   top: 20px;
@@ -26,21 +27,25 @@ body {
   cursor: pointer;
 }
 
-/* MAIN HOME SCREEN */
+/* SCROLLABLE MAIN HOME SCREEN */
 #home-screen {
+  position: absolute;
+  top: 100px;        /* space below fixed avatar */
+  bottom: 90px;      /* space above fixed footer */
+  left: 0;
   width: 100%;
-  min-height: calc(100vh - 100px);
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding: 0 0 40px 0; /* extra bottom padding for scroll comfort */
 }
 
-/* GAPVIZ LOGO (MATCH SPLASH SIZE) */
+/* GAPVIZ LOGO */
 #home-logo {
   width: 160px;
   height: auto;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -93,10 +98,11 @@ body {
   color: #ccc;
 }
 
-/* BOTTOM NAV (LOCKED FOOTER) */
+/* FIXED BOTTOM NAV (FOOTER) */
 #bottom-nav {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   height: 90px;
   background-color: #111;
