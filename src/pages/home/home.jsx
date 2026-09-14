@@ -37,6 +37,8 @@ export default function Home() {
       >
         {initials}
       </div>
+      {/* FIXED TRIAL COUNTDOWN */}
+<div id="trial-countdown">7 days left</div>
 
       {/* SCROLLABLE MIDDLE SECTION */}
       <div id="home-screen" className={`home-theme-${theme}`}>

@@ -27,6 +27,16 @@ body {
   cursor: pointer;
 }
 
+#trial-countdown {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  color: #d60000;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
 /* SCROLLABLE MAIN HOME SCREEN */
 #home-screen {
   position: fixed;
