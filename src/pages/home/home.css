@@ -30,7 +30,7 @@ body {
 /* SCROLLABLE MAIN HOME SCREEN */
 #home-screen {
   position: fixed;
-  top: 100px;        /* BELOW avatar */
+  top: 70px;        /* BELOW avatar */
   bottom: 90px;      /* ABOVE bottom nav */
   left: 0;
   width: 100%;
