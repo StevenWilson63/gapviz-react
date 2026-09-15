@@ -1,34 +1,39 @@
+/* Ensure dark background doesn't override */
 .profile-screen {
   padding: 20px;
+  color: #fff;
 }
 
+/* Title */
 .profile-title {
   font-size: 28px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #fff;
 }
 
+/* List container */
 .profile-list {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* GAPVIZ STYLE ROWS */
-.profile-row {
-  background: transparent;
-  border: 2px solid rgba(255, 26, 26, 0.35); /* soft red */
+/* GAPVIZ RED OUTLINE ROWS — HIGH SPECIFICITY */
+.profile-screen .profile-row {
+  background: transparent !important;
+  border: 2px solid rgba(255, 26, 26, 0.35) !important;
   border-radius: 12px;
   padding: 18px;
   font-size: 20px;
-  color: #ffffff;
+  color: #ffffff !important;
   cursor: pointer;
-  transition: border 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease;
 }
 
-.profile-row:hover {
-  border: 2px solid #FF1A1A; /* bright red */
+/* Hover effect */
+.profile-screen .profile-row:hover {
+  border-color: #FF1A1A !important;
   box-shadow: 0px 6px 16px rgba(255, 26, 26, 0.4);
-  color: #FF1A1A;
+  color: #FF1A1A !important;
 }
