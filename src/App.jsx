@@ -1,13 +1,10 @@
-// cloudflare root fix
-
-
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 import { UserProvider } from "./context/UserContext";
 
 import Home from "./pages/home/home";
-import Profile from "./pages/profile/Profile";
+import Profile from "./pages/profile/profile";
 
 export default function App() {
   return (
