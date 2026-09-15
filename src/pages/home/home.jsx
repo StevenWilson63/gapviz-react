@@ -1,4 +1,4 @@
-// deploy triggers
+// deploy trigger
 
 
 import React, { useState } from "react";
