@@ -1,7 +1,4 @@
-// cloudflare root fix update
-
-
-
+// cloudflare root fix
 
 
 import React from "react";
