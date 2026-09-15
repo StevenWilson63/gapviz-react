@@ -1,122 +1,69 @@
-/* --------------------------------------------------
-   PROFILE SCREEN BASELINE
--------------------------------------------------- */
+/* MAIN PROFILE SCREEN */
+#profile-screen {
+  position: fixed;
+  top: 75px;        /* BELOW header */
+  bottom: 90px;     /* ABOVE footer */
+  left: 0;
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
 
-.profile-screen {
-  min-height: 100vh;
-  padding: 24px;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0 40px 0;
   background-color: #000;
   color: #fff;
-  font-family: Arial, sans-serif;
 }
 
-/* --------------------------------------------------
-   HEADER
--------------------------------------------------- */
-
-.profile-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
-.profile-back-button {
-  border: none;
-  background: transparent;
-  color: #d60000;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 6px 10px;
-}
-
-.profile-title {
-  margin: 0;
-  font-size: 28px;
+/* PAGE TITLE */
+#profile-title {
+  font-size: 32px;
   font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* --------------------------------------------------
-   MAIN CONTENT
--------------------------------------------------- */
-
-.profile-main {
+/* BOX CONTAINER */
+.profile-boxes {
+  width: 90%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
 }
 
-/* --------------------------------------------------
-   SECTION BLOCKS
--------------------------------------------------- */
-
-.profile-section {
-  background-color: #111;
-  border: 1px solid #333;
-  border-radius: 12px;
+/* INDIVIDUAL BOX */
+.profile-box {
+  width: 100%;
   padding: 20px;
-}
-
-/* --------------------------------------------------
-   LABELS + INPUTS
--------------------------------------------------- */
-
-.profile-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 14px;
-  margin-bottom: 16px;
-  color: #ccc;
-}
-
-.profile-input {
-  margin-top: 6px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #181818;
-  color: #fff;
-  font-size: 15px;
-}
-
-.profile-input:focus {
-  border-color: #d60000;
-}
-
-/* --------------------------------------------------
-   SELECT DROPDOWN
--------------------------------------------------- */
-
-.profile-select {
-  margin-top: 6px;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background-color: #181818;
-  color: #fff;
-  font-size: 15px;
-}
-
-.profile-select:focus {
-  border-color: #d60000;
-}
-
-/* --------------------------------------------------
-   PLAY BUTTON
--------------------------------------------------- */
-
-.profile-play-button {
-  margin-top: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: none;
-  background-color: #d60000;
-  color: #fff;
-  font-size: 14px;
+  background: transparent;
+  border: 2px solid rgba(255, 26, 26, 0.35);
+  border-radius: 10px;
+  color: #FF1A1A;
+  font-size: 18px;
   cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
-.profile-play-button:hover {
-  background-color: #ff1a1a;
+.profile-box:hover {
+  background-color: #181818;
+}
+
+.profile-box:active {
+  border-color: #FF1A1A;
+  box-shadow: 0px 0px 12px rgba(255, 26, 26, 0.6);
+}
+
+.profile-box h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #d60000;
+}
+
+.profile-box p {
+  margin: 0;
+  font-size: 16px;
+  color: #ccc;
 }
