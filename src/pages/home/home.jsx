@@ -6,6 +6,7 @@ import homeIcon from "../../assets/icons/home.svg";
 import djIcon from "../../assets/icons/dj.svg";
 import libraryIcon from "../../assets/icons/library.svg";
 import fingerprintIcon from "../../assets/icons/fingerprint.svg";
+import settingsIcon from "../../assets/icons/equalizer.svg"; // NEW
 
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../../context/UserContext";
@@ -37,8 +38,16 @@ export default function Home() {
       >
         {initials}
       </div>
-      {/* FIXED TRIAL COUNTDOWN */}
-<div id="trial-countdown">7 days left</div>
+
+      {/* FIXED SETTINGS ICON */}
+      <div
+        id="settings-icon"
+        className={`home-theme-${theme}`}
+        onClick={() => navigate("/settings")}
+        title="Settings"
+      >
+        <img src={settingsIcon} alt="Settings" />
+      </div>
 
       {/* SCROLLABLE MIDDLE SECTION */}
       <div id="home-screen" className={`home-theme-${theme}`}>
@@ -46,6 +55,9 @@ export default function Home() {
 
         <h1 id="welcome-text">{greetingText}</h1>
         <p className="sub-welcome">Ready to jump back in?</p>
+
+        {/* TRIAL COUNTDOWN MOVED HERE */}
+        <p id="trial-countdown" className="trial-middle">7 days left in your free trial</p>
 
         <div className="home-boxes">
           <div className="home-box" onClick={() => navigate("/dj")}>
