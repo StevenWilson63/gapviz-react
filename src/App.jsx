@@ -15,7 +15,11 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
-          
+          <Route path="/profile/account" element={<div>Account Page</div>} />
+<Route path="/profile/subscription" element={<div>Subscription Page</div>} />
+<Route path="/profile/dj" element={<div>DJ Settings Page</div>} />
+<Route path="/profile/app" element={<div>App Settings Page</div>} />
+
         </Routes>
       </BrowserRouter>
     </UserProvider>
