@@ -15,8 +15,7 @@ export default function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
-          <Route path="/profile" element={<Profile />} />
-
+          
         </Routes>
       </BrowserRouter>
     </UserProvider>
